@@ -1,22 +1,17 @@
+# Requiremnts.txt
+
 [package]
 name = "fast_snake_v6"
 version = "0.1.0"
 edition = "2021"
 
-# 这一行非常重要，告诉编译器我们要生成的是 Python 扩展库（.pyd/.so），而不是可执行程序(.exe)
+#（.pyd/.so）instead of (.exe)
 [lib]
 name = "fast_snake_v6"
 crate-type = ["cdylib"]
 
 [dependencies]
-# Python 互操作核心库，"extension-module" 特性允许我们要编译成 Python 模块
 pyo3 = { version = "0.20", features = ["extension-module"] }
-
-# 让 Rust 能直接读写 Numpy 数组（零拷贝）
 numpy = "0.20"
-
-# 高性能随机数生成器（比 Python 的 random 快很多）
 rand = "0.8"
-
-# 并行计算神器！它能自动把任务分配给你的 Ryzen 9700X 所有核心
 rayon = "1.8"
