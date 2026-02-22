@@ -2,7 +2,7 @@ import sys
 import os
 import torch
 import numpy as np
-from flask import Flask, request, jsonify, send_file
+from flask import Flask, request, jsonify, send_file, send_from_directory
 from flask_cors import CORS
 
 # 确保能导入 snake 文件夹下的定义
@@ -32,6 +32,10 @@ def load_trained_model():
     return model
 
 model = load_trained_model()
+
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    return send_from_directory('static', filename)
 
 @app.route('/predict', methods=['POST'])
 def predict():

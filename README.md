@@ -6,8 +6,6 @@ This project implements a state-of-the-art, high-performance Reinforcement Learn
 The core infrastructure bypasses the Python Global Interpreter Lock (GIL) via PyO3, allowing 128 game environments to run concurrently. This dramatically accelerates data collection, enabling deep RL models to learn complex pathfinding and obstacle avoidance strategies within hours.
 
 ## 🧠 Development Philosophy: AI-Assisted Engineering
-As a systems-oriented engineer, I prioritized high-level architectural design, algorithm verification, and performance strategy over syntax memorization. 
-
 The core game engine's memory management, data structures, and reward shaping were designed using a rigorous C++ engineering mindset. I then leveraged LLMs (Claude 3 Opus) as intelligent compilers to accelerate the translation of these designs into memory-safe, concurrent Rust code. This modern AI-assisted workflow allowed me to focus purely on system architecture, mathematical optimization, and RL algorithm tuning.
 
 ## 🚀 Core Contributions & System Architecture
